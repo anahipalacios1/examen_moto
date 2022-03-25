@@ -12,18 +12,14 @@
 	<table>
 		<thead>
 			<tr>
-				<th th:text="${idalumno}"></th>
+				<th th:text="${idproveedor}"></th>
 				<th th:text="${nombre}"></th>
-				<th th:text="${apellido}"></th>
 			</tr>
 		</thead>
 		<tbody>
-		<!--th:each en Thymeleaf para recorrer listas
-		recorre la lista de alumno que se le paso -->
-			<tr th:each="alumno: ${alumno}">
-				<td th:text="${alumno.idalumno}"></td>
-				<td th:text="${alumno.nombre}"></td>
-				<td th:text="${alumno.apellido}"></td>
+			<tr th:each="proveedor: ${proveedor}">
+				<td th:text="${proveedor.idproveedor}"></td>
+				<td th:text="${proveedor.nombre}"></td>
 			</tr>
 		</tbody>
 	</table>

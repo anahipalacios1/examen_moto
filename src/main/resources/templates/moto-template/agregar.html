@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/motos/agregar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+	<div>
+		<label for="idproveedor">ID Proveedor</label>
+		<div>
+			<input type="text" name="idproveedor" id="idproveedor" th:value="${moto.idproveedor}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idproveedor')}" th:text="${error.idproveedor}"></div>
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Agregar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>

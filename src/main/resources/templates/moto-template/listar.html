@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<div th:if="${motos.isEmpty()}">No hay motos en la lista!</div>
+	<table th:if="${not motos.isEmpty()}">
+		<thead>
+			<tr>
+				<th th:text="${idmoto}"></th>
+				<th th:text="${idproveedor}"></th>
+				<th th:text="${monto}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="moto: ${motos}">
+				<td th:text="${moto.idmoto}"></td>
+				<td th:text="${moto.idproveedor}"></td>
+				<td th:text="${moto.monto}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

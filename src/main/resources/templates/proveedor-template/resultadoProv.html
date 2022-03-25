@@ -12,16 +12,14 @@
 	<table>
 		<thead>
 			<tr>
-				<th th:text="${idalumno}"></th>
+				<th th:text="${idproveedor}"></th>
 				<th th:text="${nombre}"></th>
-				<th th:text="${apellido}"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="alumno: ${alumno}">
-				<td th:text="${alumno.idalumno}"></td>
-				<td th:text="${alumno.nombre}"></td>
-				<td th:text="${alumno.apellido}"></td>
+			<tr th:each="proveedor: ${proveedor}">
+				<td th:text="${proveedor.idproveedor}"></td>
+				<td th:text="${proveedor.nombre}"></td>
 			</tr>
 		</tbody>
 	</table>

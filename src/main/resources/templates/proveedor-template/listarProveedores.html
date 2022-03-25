@@ -10,20 +10,18 @@
 <body>
 	<h1 th:text="${mensaje}"></h1>
 
-	<div th:if="${alumnos.isEmpty()}">No hay Alumnos en la lista!</div>
-	<table th:if="${not alumnos.isEmpty()}">
+	<div th:if="${proveedores.isEmpty()}">No hay Proveedores en la lista!</div>
+	<table th:if="${not proveedores.isEmpty()}">
 		<thead>
 			<tr>
-				<th th:text="${idalumno}"></th>
+				<th th:text="${idproveedor}"></th>
 				<th th:text="${nombre}"></th>
-				<th th:text="${apellido}"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="alu: ${alumnos}">
-				<td th:text="${alu.idalumno}"></td>
-				<td th:text="${alu.nombre}"></td>
-				<td th:text="${alu.apellido}"></td>
+			<tr th:each="prov: ${proveedores}">
+				<td th:text="${prov.idproveedor}"></td>
+				<td th:text="${prov.nombre}"></td>
 			</tr>
 		</tbody>
 	</table>

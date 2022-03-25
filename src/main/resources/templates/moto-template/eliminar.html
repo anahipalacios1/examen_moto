@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/motos/eliminar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+		<label for="idmoto">ID Moto</label>
+		<div>
+			<input type="number" name="idmoto" id="idmoto" th:value="${moto.idmoto}">
+		</div>
+		<div th:if="${error != null && error.containsKey('idmoto')}" th:text="${error.idmoto}"></div>
+
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Eliminar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>
