@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+<form th:action="@{/alumnos/agregar}" method="POST">
+	<h1 th:text="${titulo}"></h1>
+	<div>
+		<label for="nombre">Nombre</label>
+		<div>
+			<input type="text" name="nombre" id="nombre" th:value="${alumno.nombre}">
+		</div>
+		<div th:if="${error != null && error.containsKey('nombre')}" th:text="${error.nombre}"></div>
+
+
+	</div>
+	<div>
+		<label for="apellido">Apellido</label>
+		<div>
+			<input type="text" name="apellido" id="apellido" th:value="${alumno.apellido}">
+		</div>
+		<div th:if="${error != null && error.containsKey('apellido')}" th:text="${error.apellido}"></div>
+	</div>
+	<div>
+		<div>
+			<input type="submit" value="Agregar">
+		</div>
+	</div>
+</form>
+</body>
+
+</html>

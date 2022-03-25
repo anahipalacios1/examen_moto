@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h1 th:text="${mensaje}"></h1>
+
+	<div th:if="${alumnos.isEmpty()}">No hay Alumnos en la lista!</div>
+	<table th:if="${not alumnos.isEmpty()}">
+		<thead>
+			<tr>
+				<th th:text="${idalumno}"></th>
+				<th th:text="${nombre}"></th>
+				<th th:text="${apellido}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="alu: ${alumnos}">
+				<td th:text="${alu.idalumno}"></td>
+				<td th:text="${alu.nombre}"></td>
+				<td th:text="${alu.apellido}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

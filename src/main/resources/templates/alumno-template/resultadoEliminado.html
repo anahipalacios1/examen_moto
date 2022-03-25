@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h3 th:text="${titulo}"></h3>
+	<table>
+		<thead>
+			<tr>
+				<th th:text="${idalumno}"></th>
+				<th th:text="${nombre}"></th>
+				<th th:text="${apellido}"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="alumno: ${alumno}">
+				<td th:text="${alumno.idalumno}"></td>
+				<td th:text="${alumno.nombre}"></td>
+				<td th:text="${alumno.apellido}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
